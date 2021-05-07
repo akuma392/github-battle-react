@@ -1,4 +1,6 @@
 import React from 'react';
+import Avatar1 from './Avatar1';
+import Avatar2 from './Avatar2';
 
 class Players extends React.Component {
   constructor(props) {
@@ -60,24 +62,12 @@ class Players extends React.Component {
 
         <div className="flex justify-center">
           {this.state.dataOne ? (
-            <div className="flex mr-8">
-              <img className="w-20" src={this.state.dataOne.avatar_url} />
-              <p className="mx-5">{this.state.dataOne.login}</p>
-              <button onClick={this.handleCancel} className="text-red-600">
-                X
-              </button>
-            </div>
+            <Avatar1 />
           ) : (
             <One handleOne={this.handleOne} handleInput1={this.handleInput1} />
           )}
           {this.state.dataTwo ? (
-            <div className="flex ml-12">
-              <img src={this.state.dataTwo.avatar_url} />
-              <p className="mx-5">{this.state.dataTwo.login}</p>
-              <button onClick={this.handleCancel2} className="text-red-600">
-                X
-              </button>
-            </div>
+            <Avatar2 />
           ) : (
             <Two handleTwo={this.handleTwo} handleInput2={this.handleInput2} />
           )}
